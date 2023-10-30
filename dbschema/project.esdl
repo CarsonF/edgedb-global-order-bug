@@ -5,7 +5,7 @@ module default {
     };
 
     multi link members := .<project[is Project::Member];
-    single link membership := (select .members filter .user.id = global currentUserId limit 1);
+    single link membership := (select .members filter .user = global currentUser limit 1);
   }
 }
 
